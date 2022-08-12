@@ -53,8 +53,8 @@ const updateContact = async (contactId, { name, email, phone }) => {
   if (idx === -1) {
     return null;
   }
-  books[idx] = { id, name, email, phone };
-  await updateBooks(contacts);
+  contacts[idx] = { name, email, phone };
+  await updateContacts(contacts);
   return contacts[idx];
 };
 
