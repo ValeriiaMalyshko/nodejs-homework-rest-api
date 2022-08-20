@@ -1,7 +1,9 @@
-const createError = require("./createError");
+const RequestError = require("./RequestError");
 const ctrlWrapper = require("./ctrlWrapper");
+const handleSchemaValidationErrors = require("./handleSchemaValidationErrors");
 
 module.exports = {
-  createError,
+  RequestError,
   ctrlWrapper,
+  handleSchemaValidationErrors,
 };
