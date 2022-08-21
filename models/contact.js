@@ -19,12 +19,6 @@ const contactSchema = new Schema(
       type: Boolean,
       default: false,
     },
-    isbn: {
-      type: String,
-      match: /[0-9]{3}-[0-9]{1}-[0-9]{3}-[0-9]{5}-[0-9]{1}/,
-      required: true,
-      unique: true,
-    },
   },
   { versionKey: false, timestamps: true }
 );
@@ -36,9 +30,6 @@ const addSchema = Joi.object({
   email: Joi.string().required(),
   phone: Joi.string().required(),
   favorite: Joi.boolean(),
-  isbn: Joi.string()
-    .pattern(/[0-9]{3}-[0-9]{1}-[0-9]{3}-[0-9]{5}-[0-9]{1}/)
-    .required(),
 });
 
 const updateFavoriteSchema = Joi.object({
